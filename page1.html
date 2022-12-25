@@ -13,12 +13,6 @@
 
     <p id="content">Content</p>
 
-    <?php
-        $path = "./blogs";
-        $files = scandir($path);
-
-        echo $files;
-    ?>
 
 </body>
 
@@ -29,7 +23,10 @@
             console.log(data);
             const c = document.getElementById("content");
             c.innerHTML = data;
-        })
+        });
+       $.get("blogs.php", function(data){
+            console.log(data);
+       });
     });
 </script>
 
