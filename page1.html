@@ -24,18 +24,12 @@
             const c = document.getElementById("content");
             c.innerHTML = data;
         });
-       $.get("blogs.php", function(data){
+        $.getJSON("https://api.github.com/repos/httse9/httse9.github.io/contents/blogs",function(data){
             console.log(data);
-       });
-       $.ajax({
-        type: "GET",
-        url: "blogs.php",
-        dataType: "text",
-       })
-       .done(function (data){
-        console.log(data);
-       });
+        })
     });
 </script>
 
 </html>
+
+<!-- https://stackoverflow.com/questions/69270123/how-to-list-all-filenames-under-a-directory-using-github-api -->
