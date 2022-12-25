@@ -27,6 +27,14 @@
        $.get("blogs.php", function(data){
             console.log(data);
        });
+       $.ajax({
+        type: "GET",
+        url: "blogs.php",
+        dataType: "text",
+       })
+       .done(function (data){
+        console,log(data);
+       });
     });
 </script>
 
