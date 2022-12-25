@@ -13,6 +13,13 @@
 
     <p id="content">Content</p>
 
+    <?php
+        $path = "./blogs";
+        $files = scandir($path);
+
+        echo $files;
+    ?>
+
 </body>
 
 <script src="jquery.js"></script>
