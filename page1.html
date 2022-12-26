@@ -9,9 +9,11 @@
 
 <body>
 
-    <h1>Blog</h1>
+    <h1>Blog List</h1>
 
     <p id="content">Content</p>
+
+    <a href="blog.html?title=RLRLRL OOOO" data-title="rlrlrlrl">RLRLRLRL</a>
 
 
 </body>
@@ -19,13 +21,44 @@
 <script src="jquery.js"></script>
 <script>
     $().ready(function(){
-        $.getJSON("./data.json", function(data){
-            console.log(data);
-            const c = document.getElementById("content");
-            c.innerHTML = data;
-        });
+        // $.getJSON("https://api.github.com/repos/httse9/httse9.github.io/contents/data.json", function(data){
+        //     data = JSON.parse(atob(data.content))
+        //     console.log(data.text)
+        //     const c = document.getElementById("content");
+        //     c.innerHTML = data;
+        // });
+        // on github: relative path
+        // $.getJSON("./data.json", function(data){
+        //     console.log(data);
+        //     const c = document.getElementById("content");
+        //     c.innerHTML = data;
+        // });
+        $.ajax({
+            url: "https://api.github.com/repos/httse9/httse9.github.io/contents/data.json",
+            dataType: "jsonp",
+            success: function(results){
+                var data = results.data.content;
+                data = JSON.parse(atob(data))
+                console.log(data.text)
+            }
+        })
         $.getJSON("https://api.github.com/repos/httse9/httse9.github.io/contents/blogs",function(data){
             console.log(data);
+        })
+        // $.ajax({
+        //     url: "https://api.github.com/repos/httse9/httse9.github.io/contents/blogs/trash.txt",
+        //     dataType: "text",
+        //     success: function(results){
+        //         console.log(results)
+        //         console.log(results.data)
+        //     }
+        // })
+        $.ajax({
+            url: "./blogs/trash.txt",
+            dataType: "text",
+            success: function(results){
+                console.log(results)
+            }
         })
     });
 </script>
