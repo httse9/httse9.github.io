@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>testing - blog</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/blog.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <img src="images/a.png">
+    <img src="images/b.png">
 </body>
 
 <script src="jquery.js"></script>
@@ -43,6 +44,7 @@
                 console.log(type == ">IMAGE");
                 if (type == ">IMAGE"){
                     $("<img>").attr("src", "images/" + block.substring(7)).appendTo("body");
+                    $("<br>").appendTo("body")
                 }
                 else if (type == ">TITLE"){
                     $("<h3></h3>").html(block.substring(7)).appendTo("body");
