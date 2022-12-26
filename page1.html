@@ -52,6 +52,7 @@
                 name = data[i].name;
                 title_date = name.split("_");
                 console.log(title_date);
+                name = encodeURIComponent(name)
                 var entry = $("<tr><td><a href=" + "./blog.html?title=" + name + ">"
                     +title_date[0]
                     +"</a></td><td>" +
