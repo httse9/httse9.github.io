@@ -41,7 +41,7 @@
                 type = block.substring(0, 6);
                 console.log(type == ">IMAGE");
                 if (type == ">IMAGE"){
-                    $("<img>").attr("src", block.substring(7)).appendTo("body");
+                    $("<img>").attr("src", "images/" + block.substring(7)).appendTo("body");
                 }
                 else if (type == ">TITLE"){
                     $("<h3></h3>").html(block.substring(7)).appendTo("body");
