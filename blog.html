@@ -24,10 +24,11 @@
     document.getElementById("content").innerHTML = title;
 
     $.ajax({
-        url: "https://api.github.com/repos/httse9/httse9.github.io/contents/blogs/"+
-            encodeURIComponent(title)
-            +"/content.txt",
-        dataType: "jsonp",
+        // url: "https://api.github.com/repos/httse9/httse9.github.io/contents/blogs/"+
+        //     encodeURIComponent(title)
+        //     +"/content.txt",
+        url: "./" + title + "/content.txt",
+        // dataType: "jsonp",
         success: function(results){
             console.log(results);
             text = atob(results.data.content);
