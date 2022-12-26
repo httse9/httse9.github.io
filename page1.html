@@ -15,6 +15,8 @@
 
     <p>testing testing \n</p>
 
+    <a href="./handout13.pdf">pdff</a>
+
     <a href="blog.html?title=RLRLRL OOOO" data-title="rlrlrlrl">RLRLRLRL</a>
 
 
@@ -35,34 +37,20 @@
         //     const c = document.getElementById("content");
         //     c.innerHTML = data;
         // });
-        $.ajax({
-            url: "https://api.github.com/repos/httse9/httse9.github.io/contents/data.json",
-            dataType: "jsonp",
-            success: function(results){
-                var data = results.data.content;
-                data = JSON.parse(atob(data))
-                console.log(data.text)
-            }
-        })
-        $.getJSON("https://api.github.com/repos/httse9/httse9.github.io/contents/blogs",function(data){
-            console.log(data);
-        })
         // $.ajax({
-        //     url: "https://api.github.com/repos/httse9/httse9.github.io/contents/blogs/trash.txt",
-        //     dataType: "text",
+        //     url: "https://api.github.com/repos/httse9/httse9.github.io/contents/data.json",
+        //     dataType: "jsonp",
         //     success: function(results){
-        //         console.log(results)
-        //         console.log(results.data)
+        //         var data = results.data.content;
+        //         data = JSON.parse(atob(data))
+        //         console.log(data.text)
         //     }
         // })
-        $.ajax({
-            url: "./blogs/trash.txt",
-            dataType: "text",
-            success: function(results){
-                console.log(results)
-                document.getElementById("content").innerHTML = results
-            }
+        $.getJSON("https://api.github.com/repos/httse9/httse9.github.io/contents/blogs",function(data){
+            L = data.length
+            console.log(data)
         })
+        
     });
 </script>
 

@@ -22,6 +22,23 @@
     var title = urlParams.get("title")
     console.log(title);
     document.getElementById("content").innerHTML = title;
+
+    $.ajax({
+        url: "https://api.github.com/repos/httse9/httse9.github.io/contents/blogs/trash.txt",
+        dataType: "text",
+        success: function(results){
+            console.log(results)
+            console.log(results.data)
+        }
+    })
+    $.ajax({
+        url: "./blogs/trash.txt",
+        dataType: "text",
+        success: function(results){
+            console.log(results)
+            document.getElementById("content").innerHTML = results
+        }
+    })
 </script>
 
 </html>
