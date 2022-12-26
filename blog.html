@@ -28,13 +28,13 @@
         //     encodeURIComponent(title)
         //     +"/content.txt",
         url: "./blogs/" + title + "/content.txt",
-        // dataType: "jsonp",
+        dataType: "text",
         success: function(results){
             console.log(results);
-            text = atob(results.data.content);
-            console.log(text);
+            // text = atob(results.data.content);
+            // console.log(text);
 
-            blocks = text.split("\n");
+            blocks = results.split("\n");
             blocks = blocks.filter(item => item);
             console.log(blocks);
 
