@@ -50,7 +50,7 @@
             console.log(L)
             for (let i = 0; i < L; i++){
                 name = data[i].name;
-                title_date = name.split("_");
+                title_date = name.split("___");
                 console.log(title_date);
                 name = encodeURIComponent(name)
                 var entry = $("<tr><td><a href=" + "./blog.html?title=" + name + ">"
