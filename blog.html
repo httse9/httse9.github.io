@@ -24,12 +24,23 @@
     document.getElementById("content").innerHTML = title;
 
     $.ajax({
-        url: "https://api.github.com/repos/httse9/httse9.github.io/contents/blogs/"+title+"/content.txt",
+        url: "https://api.github.com/repos/httse9/httse9.github.io/contents/blogs/"+
+            encodeURIComponent(title)
+            +"/content.txt",
         dataType: "jsonp",
         success: function(results){
-            console.log(results)
-            text = atob(results.data.content)
-            console.log(text)
+            console.log(results);
+            text = atob(results.data.content);
+            console.log(text);
+
+            blocks = text.split("\n");
+            blocks = blocks.filter(item => item);
+            console.log(blocks);
+
+            for (var block of blocks){
+                type = block.substring(0, 6);
+                console.log(type == ">IMAGE")
+            }
         }
     })
     // $.ajax({
