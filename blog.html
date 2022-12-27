@@ -34,15 +34,18 @@
             // text = atob(results.data.content);
             // console.log(text);
 
-            blocks = results.split("\n");
+            blocks = results.split("\n\n");
             blocks = blocks.filter(item => item);
             console.log(blocks);
 
             for (var block of blocks){
                 type = block.substring(0, 6);
-                console.log(type == ">IMAGE");
                 if (type == ">IMAGE"){
-                    $("<img>").attr("src", "images/" + block.substring(7)).appendTo("body");
+                    img_caption = block.split("\n");
+                    $("<img>").attr("src", "images/" + img_caption[0].substring(7)).appendTo("body");
+                    if (img_caption[1]){
+                        $("<p></p>").html(img_caption[1]).appendTo("body");
+                    }
                     $("<br>").appendTo("body")
                 }
                 else if (type == ">TITLE"){
