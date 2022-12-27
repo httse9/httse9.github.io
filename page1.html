@@ -47,9 +47,23 @@
         //     }
         // })
         $.ajax({
-            url: "./blogs",
+            url: "./blog_list.txt",
+            dataType: "text",
             success: function(results){
-                console.log(results)
+                console.log(results);
+
+                names = results.split("\n");
+                names = names.filter(item => item != "." && item != ".." && item);
+                console.log("names");
+
+                for (var name of names){
+                    title_date = name.split("___");
+                    title = title_date[0];
+                    date = title_date[1];
+                    name = encodeURIComponent(name);
+                    $("<tr><td><a href=" + "./blog.html?title=" + name + ">"
+                        + title +"</a></td><td>" + date + "</td></tr>").appendTo("table");
+                }
             }
         })
         // $.getJSON("https://api.github.com/repos/httse9/httse9.github.io/contents/blogs",function(data){
