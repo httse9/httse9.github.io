@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
 </body>
 
 <script src="jquery.js"></script>
@@ -44,9 +43,11 @@
                     img_caption = block.split("\n");
                     $("<img>").attr("src", "images/" + img_caption[0].substring(7)).appendTo("body");
                     if (img_caption[1]){
-                        $("<p></p>").html(img_caption[1]).appendTo("body");
+                        $("<p class='caption'></p>").html(img_caption[1]).appendTo("body");
                     }
-                    $("<br>").appendTo("body")
+                    else {
+                        $("<br>").appendTo("body")
+                    }
                 }
                 else if (type == ">TITLE"){
                     $("<h3></h3>").html(block.substring(7)).appendTo("body");

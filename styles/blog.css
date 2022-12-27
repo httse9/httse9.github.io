@@ -12,6 +12,11 @@ img {
     margin-right: auto;
 }
 
+.caption {
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
 table {
     width: 100%;
     text-align: left;
