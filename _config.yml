@@ -22,7 +22,7 @@ repository               : "httse9.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "me.jpg"
   name             : "Hon Tik Tse"
   pronouns         : # example: "she/her"  
   bio              : "PhD Student"
