@@ -1,87 +1,105 @@
 /* ==========================================================================
    PUBLICATIONS LIST
+   Card style adapted from dikshuy.github.io (MIT)
    ========================================================================== */
 
-.pub-section {
-  margin: 1.5em 0 0.25em;
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid var(--global-border-color);
-  font-size: 1.1em;
+.pub-scholar-link {
+  margin-bottom: 1.8em;
+  font-size: 0.95em;
 }
 
 .pub-list {
-  list-style: none;
-  margin: 0 0 2em;
-  padding: 0;
+  margin-top: 1em;
 }
 
-.pub {
-  margin: 0;
-  padding: 1em 0;
-  border-bottom: 1px solid var(--global-border-color);
-
-  &:last-child {
-    border-bottom: none;
-  }
-
-  p {
-    margin: 0;
-  }
-}
-
-.pub__title {
-  font-size: 1em;
+.pub-section-heading {
+  font-size: 1.2em;
   font-weight: 600;
-  line-height: 1.35;
+  margin: 2em 0 0.8em;
+  padding-bottom: 0.4em;
+  border-bottom: 2px solid var(--global-border-color);
+}
+
+.pub-card {
+  background: var(--global-bg-color);
+  border: 1px solid var(--global-border-color);
+  border-left: 4px solid #5577e8;
+  border-radius: 4px;
+  padding: 1.2em 1.4em;
+  margin-bottom: 1.2em;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 2px 12px rgba(65, 105, 225, 0.12);
+  }
+}
+
+.pub-title {
+  font-size: 1.05em;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.35em;
 
   a {
     color: var(--global-text-color);
     text-decoration: none;
 
     &:hover {
-      color: var(--global-link-color);
-      text-decoration: underline;
+      color: #3f62d4;
     }
   }
 }
 
-.pub__authors {
-  margin-top: 0.3em !important;
-  font-size: 0.85em;
+.pub-authors {
+  font-size: 0.88em;
   color: var(--global-text-color);
+  opacity: 0.85;
+  margin-bottom: 0.5em;
 }
 
-.pub__meta {
+.pub-venue {
+  margin-bottom: 0.7em;
+}
+
+.pub-venue-badge {
+  display: inline-block;
+  background: #eef0fc;
+  color: #3f62d4;
+  font-size: 0.8em;
+  font-weight: 600;
+  padding: 0.2em 0.65em;
+  border-radius: 3px;
+  border: 1px solid #c0cbf5;
+}
+
+.pub-venue-preprint {
+  background: #fdf3e7;
+  color: #9a6200;
+  border-color: #f0d9b0;
+}
+
+.pub-links {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5em;
-  margin-top: 0.3em !important;
-  font-size: 0.8em;
-  color: var(--global-text-color-light);
+  gap: 0.45em;
+  margin-top: 0.65em;
 }
 
-.pub__venue {
-  font-style: italic;
-}
-
-.pub__year::before {
-  content: "·";
-  margin-right: 0.5em;
-}
-
-.pub__link {
-  margin-left: 0.25em;
-  padding: 0.05em 0.6em;
-  border: 1px solid var(--global-link-color);
-  border-radius: 999px;
-  color: var(--global-link-color);
-  font-size: 0.9em;
-  text-decoration: none;
+.pub-btn {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  padding: 0.3em 0.85em;
+  border-radius: 3px;
+  text-decoration: none !important;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  background: #5577e8;
+  color: #fff !important;
+  border: 1px solid #5577e8;
+  line-height: 1.6;
 
   &:hover {
-    background: var(--global-link-color);
-    color: var(--global-bg-color);
-    text-decoration: none;
+    background: #3f62d4;
+    border-color: #3f62d4;
   }
 }

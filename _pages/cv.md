@@ -43,9 +43,9 @@ Skills
 
 Publications
 ======
-  <ul class="pub-list">{% assign pubs = site.publications | sort: "date" | reverse %}{% for post in pubs %}
+  <div class="pub-list">{% assign pubs = site.publications | sort: "date" | reverse %}{% for post in pubs %}
     {% include publication-item.html %}
-  {% endfor %}</ul>
+  {% endfor %}</div>
   
 Talks
 ======

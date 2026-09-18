@@ -6,18 +6,18 @@ author_profile: true
 ---
 
 {% if site.author.googlescholar %}
-  <p class="wordwrap">You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.</p>
+  <p class="pub-scholar-link">You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.</p>
 {% endif %}
 
 {% assign pubs = site.publications | sort: "date" | reverse %}
+<div class="pub-list">
 {% for category in site.publication_category %}
   {% assign items = pubs | where: "category", category[0] %}
   {% if items.size > 0 %}
-    <h2 class="pub-section">{{ category[1].title }}</h2>
-    <ul class="pub-list">
-      {% for post in items %}
-        {% include publication-item.html %}
-      {% endfor %}
-    </ul>
+    <h2 class="pub-section-heading">{{ category[1].title }}</h2>
+    {% for post in items %}
+      {% include publication-item.html %}
+    {% endfor %}
   {% endif %}
 {% endfor %}
+</div>

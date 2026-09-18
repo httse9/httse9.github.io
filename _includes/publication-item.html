@@ -1,20 +1,21 @@
-{% capture me %}<strong>{{ site.author.name }}</strong>{% endcapture %}
+{% capture me %}<em>{{ site.author.name }}</em>{% endcapture %}
 {% assign authors = post.authors | replace: site.author.name, me %}
 
-<li class="pub">
-  <p class="pub__title">
+<div class="pub-card">
+  <div class="pub-title">
     {% if post.paperurl %}
       <a href="{{ post.paperurl }}" target="_blank" rel="noopener">{{ post.title }}</a>
     {% else %}
       {{ post.title }}
     {% endif %}
-  </p>
-  <p class="pub__authors">{{ authors }}</p>
-  <p class="pub__meta">
-    <span class="pub__venue">{{ post.venue }}</span>
-    <span class="pub__year">{{ post.date | date: "%Y" }}</span>
-    {% if post.paperurl %}
-      <a class="pub__link" href="{{ post.paperurl }}" target="_blank" rel="noopener">Paper</a>
-    {% endif %}
-  </p>
-</li>
+  </div>
+  <div class="pub-authors">{{ authors }}</div>
+  <div class="pub-venue">
+    <span class="pub-venue-badge{% if post.category == 'preprint' %} pub-venue-preprint{% endif %}">{{ post.venue }}, {{ post.date | date: "%Y" }}</span>
+  </div>
+  {% if post.paperurl %}
+    <div class="pub-links">
+      <a href="{{ post.paperurl }}" class="pub-btn" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Paper</a>
+    </div>
+  {% endif %}
+</div>
