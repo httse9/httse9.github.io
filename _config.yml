@@ -34,7 +34,7 @@ author:
   # Academic websites
   academia         : # URL
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : #"https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?user=1-_UKJ4AAAAJ&hl=en"
   impactstory      : # URL
   orcid            : 
   semantic         : # URL
@@ -79,7 +79,7 @@ author:
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
   publication:
-    title: 'Publications'
+    title: 'Conference & Journal Papers'
   preprint:
     title: 'Preprints'
   books:
@@ -222,7 +222,7 @@ collections:
     output: true
     permalink: /:collection/:path/
   publications:
-    output: true
+    output: false  # papers link straight to the paper; no per-paper pages
     permalink: /:collection/:path/
   portfolio:
     output: true

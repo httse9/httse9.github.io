@@ -43,8 +43,8 @@ Skills
 
 Publications
 ======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
+  <ul class="pub-list">{% assign pubs = site.publications | sort: "date" | reverse %}{% for post in pubs %}
+    {% include publication-item.html %}
   {% endfor %}</ul>
   
 Talks
