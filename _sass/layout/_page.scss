@@ -399,3 +399,9 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+/* Justified paragraphs on the About page */
+.about-text p {
+  text-align: justify;
+  hyphens: auto;
+}
