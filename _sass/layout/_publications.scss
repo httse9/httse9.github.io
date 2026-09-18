@@ -3,11 +3,6 @@
    Card style adapted from dikshuy.github.io (MIT)
    ========================================================================== */
 
-.pub-scholar-link {
-  margin-bottom: 1.8em;
-  font-size: 0.95em;
-}
-
 .pub-list {
   margin-top: 1em;
 }
@@ -16,8 +11,7 @@
   font-size: 1.2em;
   font-weight: 600;
   margin: 2em 0 0.8em;
-  padding-bottom: 0.4em;
-  border-bottom: 2px solid var(--global-border-color);
+  border-bottom: none;
 }
 
 .pub-card {
